@@ -81,13 +81,22 @@ run_analysis <- function(){
   # and the performance (combinedData)
   data <- cbind(subject, activity, combinedData)
   
+  melted<- melt(data, id = c("subjectId", "activity"))
+  
   # write the data table on a new file
   write.table(data, "combined_tidy_data.txt")
   
-  # create a dataset grouped by subject and activity after applying the calculationof the mean
+  # now i will calculate the mean per each activity and variable, based on previous dataset
+  # load the necessary libraries
+  library(dplyr)
   library(data.table)
-  dataTable <- data.table(data)
-  calculatedData<- dataTable[, lapply(.SD,mean), by=c("subjectId", "activity")]
-  write.table(calculatedData, "calculated_tidy_data.txt", row.name=FALSE)
+  # i convert the melted data set into a data.table
+  meltedDT<- data.table(melted)
+  setkey(meltedDT, subjectId, activity, variable)
+  # here i calculate the mean
+  calculatedMean <- meltedDT[, list(average = mean(value)), by=key(meltedDT)]
+  # write the result on a txt file
+  write.table(calculatedMean, "calculated_tidy_data.txt", row.name=FALSE)
+  
   }
 }
