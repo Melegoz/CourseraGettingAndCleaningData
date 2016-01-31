@@ -5,9 +5,9 @@ Getting and Cleaning Data
 In this repository you find all the requested files for the final assignment of the course Getting and Cleaning data, there are **4** files:
 
 
-- `ReadMe.md` - this file providing the overview of the project and files included in this repository
+- `README.md` - this file providing the overview of the project and files included in this repository
 
-- `Codebook.md` - description of where i have taken the data, step by step data transformation to obtain the cleaned and calculated output
+- `CodeBook.md` - description of where i have taken the data, step by step data transformation to obtain the cleaned and calculated output
 
 - `run_analysis.R` - R script (function) that will process the given data according to what described in CodeBook.md
 
