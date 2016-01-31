@@ -91,9 +91,9 @@ Here are the actions performed by the script `run_analysis.R` to obtain the tidy
 12. Then i've associated a readable lable to each activity ID
 13. Using cbind i have created the desired tidy table for output, putting together Subject, Activity, Measurments
 14. Written the new data table on a new file "combined_tidy_data.txt" (this was not required however it is good for anyone who simply wants to check how the tidy data looks like - without the average)
-15. Loaded library data.table
+15. Loaded library data.table and library dplyr
 16. Coverted the previously obtained output into a data.table
-17. Using the function lapply i have calculated the mean by grouping first by subjectId then by activity
+17. Using the dplyr package i have calculated the mean by grouping first by subjectId, activity and variable
 18. I have written the output on a new file named "calculated_tidy_data.txt"
 
 ## How to use the script:
@@ -101,7 +101,7 @@ In order to run the script `run_analysis.R` you have to save the above mentioned
 Within your working directory, source and run the `run_analysis.R`
 
 ## The output of the script:
-The output is a .txt file named `calculated_tidy_data.txt` which contains the tidy and clean dataset with the average of each feature for each activity performed by each subject
+The output is a .txt file named `calculated_tidy_data.txt` which contains the tidy and clean dataset with the average of each variable for each activity performed by each subject
 
 Acknowledgements:
 =================
