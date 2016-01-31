@@ -84,8 +84,7 @@ run_analysis <- function(){
   # write the data table on a new file
   write.table(data, "combined_tidy_data.txt")
   
-  # create a dataset grouped by subject and activity after applying standard deviation and average calculations
-  # first we need to install the data.table package so to be able to call the data.table library
+  # create a dataset grouped by subject and activity after applying the calculationof the mean
   library(data.table)
   dataTable <- data.table(data)
   calculatedData<- dataTable[, lapply(.SD,mean), by=c("subjectId", "activity")]
