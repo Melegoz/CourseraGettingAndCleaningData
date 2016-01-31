@@ -16,7 +16,7 @@ The following are all the variables (measures) collected per each person (subjec
 
 **activity**
 
-- *Values*: [WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING]
+- *Values*: [WALKING, WALKING UPSTAIRS, WALKING DOWNSTAIRS, SITTING, STANDING, LAYING]
     
 - *Description*: Activity performed by the subject
 	
